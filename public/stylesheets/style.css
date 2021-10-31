@@ -1,0 +1,58 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #659DBD !important;
+}
+
+input[type='password']{
+  color: black;
+}
+
+input[type='text']{
+  color: black;
+}
+
+input[type='email']{
+  color: black;
+}
+
+.form{
+  width: 400px;
+  margin: 100px auto 0px auto;
+}
+
+.heading{
+  background-color: royalblue;
+  text-align: center;
+  padding: 20px;
+  font-family: sans-serif;
+  font-size: 30px;
+  
+}
+
+.signup{
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+#signup{
+  margin: 40px;
+}
+label{
+  font-family: sans-serif;
+  font-size: 18px;
+  font-style: italic;
+}
+
+

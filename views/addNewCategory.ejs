@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Password Management System</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Password Category</a>
+                <ul class="dropdown-menu">
+                  <li><a href="/add-new-category" class="dropdown-item">Add New Category</a></li>
+                  <li><a href="/passwordCategory" class="dropdown-item">View All Category</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Password Details</a>
+                <ul class="dropdown-menu">
+                  <li><a href="add-new-password" class="dropdown-item">Add New Password</a></li>
+                  <li><a href="view-all-password" class="dropdown-item">View All Password</a></li>
+                </ul>
+              </li>
+          <li><a href="/logout">Signout</a></li>
+          </ul>
+          <div class="navbar-header" style="float: right;font-size:30px;"><a href="#">Loggedin As: <% if(loginUser){ %> <%= loginUser %><% } %>  </a></div>
+        </div>
+      </nav>
+    <div class="form">
+      <div class="signup">
+        <div class="heading">Add New Password Category</div>
+        <form id="signup" method="POST" action="/add-new-category">
+          <% if(error != ''){ %>
+            <p style="color: red;text-align:center"><%= error.PasswordCategory.msg %> </p>
+            <% } %> 
+            <% if(success != ''){ %>
+              <p style="color: green;text-align:center"><%= success %> </p>
+              <% } %> 
+        <label>Category Name</label>
+        <br>
+        <input style="width: 100%;" type="text" name="PasswordCategory" id="PasswordCategory" placeholder="Enter Your Password Category Name">
+        <br><br>
+        <input class="btn btn-primary" type="submit" value="Add Category" name="submit">
+        <br><br>
+        <p><a href="/passwordCategory">View All Category</a></p>
+      </form>
+      </div>
+    </div>
+  </body>
+</html>
